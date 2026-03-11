@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>视界工坊 - 专业PS与PR在线教育</title>
+
+    <style>
+
+        /* 全局样式重置与基础设置 */
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+
+        body {
+
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+
+            background-color: #121212; /* 深色背景，突出内容 */
+
+            color: #ffffff;
+
+            line-height: 1.6;
+
+        }
+
+
+
+        a {
+
+            text-decoration: none;
+
+            color: inherit;
+
+        }
+
+
+
+        /* 导航栏样式 */
+
+        header {
+
+            background: rgba(0, 0, 0, 0.8);
+
+            backdrop-filter: blur(10px);
+
+            position: fixed;
+
+            width: 100%;
+
+            z-index: 1000;
+
+            padding: 1rem 5%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            border-bottom: 1px solid #333;
+
+        }
+
+
+
+        .logo {
+
+            font-size: 1.8rem;
+
+            font-weight: 700;
+
+            color: #0ff; /* 青色点缀 */
+
+        }
+
+
+
+        nav ul {
+
+            display: flex;
+
+            list-style: none;
+
+            gap: 2rem;
+
+        }
+
+
+
+        nav a:hover {
+
+            color: #f0f;
+
+        }
+
+
+
+        /* 英雄区域（首屏大图） */
+
+        .hero {
+
+            height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            background: linear-gradient(135deg, rgba(18, 18, 18, 0.8) 0%, rgba(18, 18, 18, 0.5) 100%), url('https://source.unsplash.com/random/1920x1080/?editing,design') no-repeat center center/cover;
+
+            padding: 0 5%;
+
+        }
+
+
+
+        .hero h1 {
+
+            font-size: 3rem;
+
+            margin-bottom: 1rem;
+
+            background: linear-gradient(45deg, #0ff, #f0f);
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+        }
+
+
+
+        .hero p {
+
+            font-size: 1.2rem;
+
+            max-width: 700px;
+
+            margin: 0 auto 2rem;
+
+            color: #ccc;
+
+        }
+
+
+
+        .btn {
+
+            padding: 0.8rem 2rem;
+
+            background: linear-gradient(45deg, #0ff, #f0f);
+
+            border: none;
+
+            border-radius: 30px;
+
+            font-size: 1rem;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+        }
+
+
+
+        .btn:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.2);
+
+        }
+
+
+
+        /* 课程特色区域 */
+
+        .features {
+
+            padding: 5rem 5%;
+
+            background: #1a1a1a;
+
+            text-align: center;
+
+        }
+
+
+
+        .features h2 {
+
+            font-size: 2.5rem;
+
+            margin-bottom: 3rem;
+
+            color: #fff;
+
+        }
+
+
+
+        .feature-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+            gap: 2rem;
+
+        }
+
+
+
+        .feature-card {
+
+            background: #222;
+
+            padding: 2rem;
+
+            border-radius: 15px;
+
+            transition: 0.3s;
+
+            border: 1px solid #333;
+
+        }
+
+
+
+        .feature-card:hover {
+
+            transform: scale(1.05);
+
+            background: #2c2c2c;
+
+            border-color: #0ff;
+
+        }
+
+
+
+        .feature-card h3 {
+
+            font-size: 1.5rem;
+
+            margin: 1rem 0;
+
+            color: #0ff;
+
+        }
+
+
+
+        /* 课程列表区域 */
+
+        .courses {
+
+            padding: 5rem 5%;
+
+            text-align: center;
+
+        }
+
+
+
+        .course-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+
+            gap: 2rem;
+
+            margin-top: 3rem;
+
+        }
+
+
+
+        .course-card {
+
+            background: #1e1e1e;
+
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+
+        }
+
+
+
+        .course-img {
+
+            height: 200px;
+
+            background: #333;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: #666;
+
+            font-size: 3rem;
+
+        }
+
+
+
+        .course-info {
+
+            padding: 1.5rem;
+
+        }
+
+
+
+        .course-info h3 {
+
+            font-size: 1.3rem;
+
+            margin-bottom: 0.5rem;
+
+            color: #fff;
+
+        }
+
+
+
+        .price {
+
+            color: #0ff;
+
+            font-weight: 700;
+
+            font-size: 1.2rem;
+
+            margin: 1rem 0;
+
+        }
+
+
+
+        /* 页脚 */
+
+        footer {
+
+            text-align: center;
+
+            padding: 2rem;
+
+            background: #000;
+
+            color: #666;
+
+            margin-top: 3rem;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <!-- 导航栏 -->
+
+    <header>
+
+        <div class="logo">视界工坊</div>
+
+        <nav>
+
+            <ul>
+
+                <li><a href="#home">首页</a></li>
+
+                <li><a href="#courses">课程中心</a></li>
+
+                <li><a href="#features">学习优势</a></li>
+
+                <li><a href="#contact">联系我们</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- 英雄区域 -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <h1>掌握视觉艺术，剪辑精彩人生</h1>
+
+            <p>专业级 Photoshop 与 Premiere Pro 教学。从零基础入门到商业项目实战，我们提供最系统的视频剪辑与平面设计培训。</p>
+
+            <button class="btn">立即免费试听</button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- 特色优势 -->
+
+    <section id="features" class="features">
+
+        <h2>为什么选择我们？</h2>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+
+                <div style="font-size: 3rem;">🎬</div>
+
+                <h3>实战项目驱动</h3>
+
+                <p>拒绝纸上谈兵。课程包含大量商业案例实战，让你在学习过程中积累真实工作经验。</p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <div style="font-size: 3rem;">👩‍🏫</div>
+
+                <h3>名师一对一指导</h3>
+
+                <p>行业资深导师亲自授课，提供作业批改与职业规划建议，解决你的每一个技术难题。</p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <div style="font-size: 3rem;">🛠️</div>
+
+                <h3>软件全版本覆盖</h3>
+
+                <p>涵盖从 CS6 到 2026 最新版的 PS 与 PR 教程，以及 AE 特效插件教学，紧跟技术潮流。</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- 课程列表 -->
+
+    <section id="courses" class="courses">
+
+        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem;">热门课程</h2>
+
+        <div class="course-grid">
+
+            <!-- 课程 1 -->
+
+            <div class="course-card">
+
+                <div class="course-img">PS 图标占位</div>
+
+                <div class="course-info">
+
+                    <h3>Photoshop 全能设计师班</h3>
+
+                    <p>适合零基础学员，涵盖修图、合成、UI设计、插画绘制。</p>
+
+                    <div class="price">¥599 <span style="color: #999; font-size: 0.9rem; text-decoration: line-through;">¥899</span></div>
+
+                    <button class="btn" style="width: 100%;">查看详情</button>
+
+                </div>
+
+            </div>
+
+            <!-- 课程 2 -->
+
+            <div class="course-card">
+
+                <div class="course-img">PR 图标占位</div>
+
+                <div class="course-info">
+
+                    <h3>Premiere 视频剪辑大师课</h3>
+
+                    <p>系统学习剪辑理论、字幕特效、音频处理，打造电影级短片。</p>
+
+                    <div class="price">¥699 <span style="color: #999; font-size: 0.9rem; text-decoration: line-through;">¥999</span></div>
+
+                    <button class="btn" style="width: 100%;">查看详情</button>
+
+                </div>
+
+            </div>
+
+            <!-- 课程 3 -->
+
+            <div class="course-card">
+
+                <div class="course-img">AE 图标占位</div>
+
+                <div class="course-info">
+
+                    <h3>After Effects 动态特效</h3>
+
+                    <p>进阶课程，学习 MG 动画、绿幕抠像、粒子特效与合成技术。</p>
+
+                    <div class="price">¥799</div>
+
+                    <button class="btn" style="width: 100%;">查看详情</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- 页脚 -->
+
+    <footer id="contact">
+
+        <p>&copy; 2026 视界工坊. 版权所有. 专注于 Adobe 软件教育。</p>
+
+        <p>联系我们：contact@shijie.com</p>
+
+    </footer>
+
+
+
+</body>
+
+  </html>
