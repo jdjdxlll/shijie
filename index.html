@@ -10,9 +10,9 @@
 
     <title>视界工坊 - 专业PS与PR在线教育</title>
 
-    <style>
+    <!-- 引入简单的 CSS Reset -->
 
-        /* 全局样式重置与基础设置 */
+    <style>
 
         * {
 
@@ -24,361 +24,35 @@
 
         }
 
-
-
         body {
 
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: "Microsoft YaHei", sans-serif;
 
-            background-color: #121212; /* 深色背景，突出内容 */
+            background-color: #f5f5f5;
 
-            color: #ffffff;
-
-            line-height: 1.6;
+            color: #333;
 
         }
 
+        a { text-decoration: none; color: inherit; }
 
+        ul { list-style: none; }
 
-        a {
+        .container {
 
-            text-decoration: none;
+            width: 1200px;
 
-            color: inherit;
-
-        }
-
-
-
-        /* 导航栏样式 */
-
-        header {
-
-            background: rgba(0, 0, 0, 0.8);
-
-            backdrop-filter: blur(10px);
-
-            position: fixed;
-
-            width: 100%;
-
-            z-index: 1000;
-
-            padding: 1rem 5%;
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            border-bottom: 1px solid #333;
+            margin: 0 auto;
 
         }
 
+        .clearfix::after {
 
+            content: "";
 
-        .logo {
+            display: table;
 
-            font-size: 1.8rem;
-
-            font-weight: 700;
-
-            color: #0ff; /* 青色点缀 */
-
-        }
-
-
-
-        nav ul {
-
-            display: flex;
-
-            list-style: none;
-
-            gap: 2rem;
-
-        }
-
-
-
-        nav a:hover {
-
-            color: #f0f;
-
-        }
-
-
-
-        /* 英雄区域（首屏大图） */
-
-        .hero {
-
-            height: 100vh;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            text-align: center;
-
-            background: linear-gradient(135deg, rgba(18, 18, 18, 0.8) 0%, rgba(18, 18, 18, 0.5) 100%), url('https://source.unsplash.com/random/1920x1080/?editing,design') no-repeat center center/cover;
-
-            padding: 0 5%;
-
-        }
-
-
-
-        .hero h1 {
-
-            font-size: 3rem;
-
-            margin-bottom: 1rem;
-
-            background: linear-gradient(45deg, #0ff, #f0f);
-
-            -webkit-background-clip: text;
-
-            -webkit-text-fill-color: transparent;
-
-        }
-
-
-
-        .hero p {
-
-            font-size: 1.2rem;
-
-            max-width: 700px;
-
-            margin: 0 auto 2rem;
-
-            color: #ccc;
-
-        }
-
-
-
-        .btn {
-
-            padding: 0.8rem 2rem;
-
-            background: linear-gradient(45deg, #0ff, #f0f);
-
-            border: none;
-
-            border-radius: 30px;
-
-            font-size: 1rem;
-
-            font-weight: 600;
-
-            cursor: pointer;
-
-            transition: 0.3s;
-
-        }
-
-
-
-        .btn:hover {
-
-            transform: translateY(-3px);
-
-            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.2);
-
-        }
-
-
-
-        /* 课程特色区域 */
-
-        .features {
-
-            padding: 5rem 5%;
-
-            background: #1a1a1a;
-
-            text-align: center;
-
-        }
-
-
-
-        .features h2 {
-
-            font-size: 2.5rem;
-
-            margin-bottom: 3rem;
-
-            color: #fff;
-
-        }
-
-
-
-        .feature-grid {
-
-            display: grid;
-
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
-            gap: 2rem;
-
-        }
-
-
-
-        .feature-card {
-
-            background: #222;
-
-            padding: 2rem;
-
-            border-radius: 15px;
-
-            transition: 0.3s;
-
-            border: 1px solid #333;
-
-        }
-
-
-
-        .feature-card:hover {
-
-            transform: scale(1.05);
-
-            background: #2c2c2c;
-
-            border-color: #0ff;
-
-        }
-
-
-
-        .feature-card h3 {
-
-            font-size: 1.5rem;
-
-            margin: 1rem 0;
-
-            color: #0ff;
-
-        }
-
-
-
-        /* 课程列表区域 */
-
-        .courses {
-
-            padding: 5rem 5%;
-
-            text-align: center;
-
-        }
-
-
-
-        .course-grid {
-
-            display: grid;
-
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-
-            gap: 2rem;
-
-            margin-top: 3rem;
-
-        }
-
-
-
-        .course-card {
-
-            background: #1e1e1e;
-
-            border-radius: 15px;
-
-            overflow: hidden;
-
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-
-        }
-
-
-
-        .course-img {
-
-            height: 200px;
-
-            background: #333;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            color: #666;
-
-            font-size: 3rem;
-
-        }
-
-
-
-        .course-info {
-
-            padding: 1.5rem;
-
-        }
-
-
-
-        .course-info h3 {
-
-            font-size: 1.3rem;
-
-            margin-bottom: 0.5rem;
-
-            color: #fff;
-
-        }
-
-
-
-        .price {
-
-            color: #0ff;
-
-            font-weight: 700;
-
-            font-size: 1.2rem;
-
-            margin: 1rem 0;
-
-        }
-
-
-
-        /* 页脚 */
-
-        footer {
-
-            text-align: center;
-
-            padding: 2rem;
-
-            background: #000;
-
-            color: #666;
-
-            margin-top: 3rem;
+            clear: both;
 
         }
 
@@ -390,85 +64,85 @@
 
 
 
-    <!-- 导航栏 -->
+    <!-- 顶部导航栏 -->
 
-    <header>
+    <header style="background: #fff; border-bottom: 1px solid #eee; padding: 15px 0;">
 
-        <div class="logo">视界工坊</div>
+        <div class="container">
 
-        <nav>
+            <div style="float: left;">
 
-            <ul>
+                <img src="https://via.placeholder.com/150x40?text=Logo" alt="Logo" style="height: 40px;">
 
-                <li><a href="#home">首页</a></li>
+            </div>
 
-                <li><a href="#courses">课程中心</a></li>
+            <nav style="float: right; line-height: 40px;">
 
-                <li><a href="#features">学习优势</a></li>
+                <a href="#" style="margin-left: 20px; font-weight: bold;">首页</a>
 
-                <li><a href="#contact">联系我们</a></li>
+                <a href="#" style="margin-left: 20px; font-weight: bold;">选课中心</a>
 
-            </ul>
+                <a href="#" style="margin-left: 20px; font-weight: bold;">直播课堂</a>
 
-        </nav>
+                <a href="#" style="margin-left: 20px; font-weight: bold;">学习中心</a>
+
+            </nav>
+
+        </div>
 
     </header>
 
 
 
-    <!-- 英雄区域 -->
+    <!-- 分类筛选区 -->
 
-    <section id="home" class="hero">
+    <section style="background: #fff; padding: 20px 0; border-bottom: 1px solid #eee;">
 
-        <div class="hero-content">
+        <div class="container">
 
-            <h1>掌握视觉艺术，剪辑精彩人生</h1>
+            <!-- 分类 -->
 
-            <p>专业级 Photoshop 与 Premiere Pro 教学。从零基础入门到商业项目实战，我们提供最系统的视频剪辑与平面设计培训。</p>
+            <div style="margin-bottom: 10px;">
 
-            <button class="btn">立即免费试听</button>
+                <span style="display: inline-block; width: 50px; font-weight: bold;">分类：</span>
 
-        </div>
+                <a href="#" style="margin: 0 10px; color: #0056b3;">全部</a>
 
-    </section>
+                <a href="#" style="margin: 0 10px;">设计创作</a>
 
+                <a href="#" style="margin: 0 10px;">影视制作</a>
 
+                <a href="#" style="margin: 0 10px;">互联网运营</a>
 
-    <!-- 特色优势 -->
+                <a href="#" style="margin: 0 10px;">高效办公</a>
 
-    <section id="features" class="features">
-
-        <h2>为什么选择我们？</h2>
-
-        <div class="feature-grid">
-
-            <div class="feature-card">
-
-                <div style="font-size: 3rem;">🎬</div>
-
-                <h3>实战项目驱动</h3>
-
-                <p>拒绝纸上谈兵。课程包含大量商业案例实战，让你在学习过程中积累真实工作经验。</p>
+                <a href="#" style="margin: 0 10px;">学历教育</a>
 
             </div>
 
-            <div class="feature-card">
+            <!-- 方向 -->
 
-                <div style="font-size: 3rem;">👩‍🏫</div>
+            <div>
 
-                <h3>名师一对一指导</h3>
+                <span style="display: inline-block; width: 50px; font-weight: bold;">方向：</span>
 
-                <p>行业资深导师亲自授课，提供作业批改与职业规划建议，解决你的每一个技术难题。</p>
+                <a href="#" style="margin: 0 10px; color: #0056b3;">全部</a>
 
-            </div>
+                <a href="#" style="margin: 0 10px;">Photoshop</a>
 
-            <div class="feature-card">
+                <a href="#" style="margin: 0 10px;">Illustrator</a>
 
-                <div style="font-size: 3rem;">🛠️</div>
+                <a href="#" style="margin: 0 10px;">平面设计</a>
 
-                <h3>软件全版本覆盖</h3>
+                <a href="#" style="margin: 0 10px;">电商设计</a>
 
-                <p>涵盖从 CS6 到 2026 最新版的 PS 与 PR 教程，以及 AE 特效插件教学，紧跟技术潮流。</p>
+                <a href="#" style="margin: 0 10px;">摄影后期</a>
+
+                <a href="#" style="margin: 0 10px;">网页设计</a>
+
+                <a href="#" style="margin: 0 10px;">UI设计</a>
+
+                <!-- 更多链接... -->
 
             </div>
 
@@ -478,69 +152,185 @@
 
 
 
-    <!-- 课程列表 -->
+    <!-- 主体内容 -->
 
-    <section id="courses" class="courses">
+    <main style="background: #f5f5f5; padding: 20px 0;">
 
-        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem;">热门课程</h2>
+        <div class="container">
 
-        <div class="course-grid">
+            <div class="clearfix">
 
-            <!-- 课程 1 -->
+                <!-- 左侧大图/轮播图 (占位) -->
 
-            <div class="course-card">
+                <div style="float: left; width: 720px; height: 400px; background: #eee; margin-right: 20px; display: flex; align-items: center; justify-content: center; color: #999;">
 
-                <div class="course-img">PS 图标占位</div>
-
-                <div class="course-info">
-
-                    <h3>Photoshop 全能设计师班</h3>
-
-                    <p>适合零基础学员，涵盖修图、合成、UI设计、插画绘制。</p>
-
-                    <div class="price">¥599 <span style="color: #999; font-size: 0.9rem; text-decoration: line-through;">¥899</span></div>
-
-                    <button class="btn" style="width: 100%;">查看详情</button>
+                    [此处放置轮播图或主视觉图]
 
                 </div>
 
-            </div>
 
-            <!-- 课程 2 -->
 
-            <div class="course-card">
+                <!-- 右侧课程列表 -->
 
-                <div class="course-img">PR 图标占位</div>
+                <div style="float: right; width: 460px;">
 
-                <div class="course-info">
+                    
 
-                    <h3>Premiere 视频剪辑大师课</h3>
+                    <!-- 课程咨询 -->
 
-                    <p>系统学习剪辑理论、字幕特效、音频处理，打造电影级短片。</p>
+                    <div style="background: #fff; padding: 15px; margin-bottom: 20px; border-radius: 5px; border: 1px solid #eee;">
 
-                    <div class="price">¥699 <span style="color: #999; font-size: 0.9rem; text-decoration: line-through;">¥999</span></div>
+                        <div style="text-align: center; font-weight: bold; font-size: 1.1rem; margin-bottom: 10px;">课程咨询</div>
 
-                    <button class="btn" style="width: 100%;">查看详情</button>
+                        <div style="text-align: center; color: #666; font-size: 0.9rem;">闪逸在线教育</div>
 
-                </div>
+                        <div style="text-align: center; margin: 15px 0;">
 
-            </div>
+                            <img src="https://via.placeholder.com/100x100?text=QR" alt="公众号" style="width: 80px; height: 80px; margin: 0 auto;">
 
-            <!-- 课程 3 -->
+                            <div style="font-size: 0.8rem; color: #666; margin-top: 5px;">官方公众号</div>
 
-            <div class="course-card">
+                        </div>
 
-                <div class="course-img">AE 图标占位</div>
+                        <div style="text-align: center; color: #666; font-size: 0.8rem;">
 
-                <div class="course-info">
+                            北京市朝阳区北苑路40号北京有色金属研究所院内
 
-                    <h3>After Effects 动态特效</h3>
+                        </div>
 
-                    <p>进阶课程，学习 MG 动画、绿幕抠像、粒子特效与合成技术。</p>
+                    </div>
 
-                    <div class="price">¥799</div>
 
-                    <button class="btn" style="width: 100%;">查看详情</button>
+
+                    <!-- 设计全科班 -->
+
+                    <div style="background: #fff; padding: 20px; margin-bottom: 20px; border-radius: 5px; border: 1px solid #eee; position: relative;">
+
+                        <div style="position: absolute; top: 10px; right: -10px; background: #ff6b6b; color: white; padding: 5px 15px; font-size: 0.8rem; transform: rotate(45deg); text-align: center;">
+
+                            火热报名中
+
+                        </div>
+
+                        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+
+                            <div style="flex: 1;">
+
+                                <div style="font-weight: bold; font-size: 1.1rem;">设计全科班</div>
+
+                                <div style="color: #666; font-size: 0.9rem;">3个基础+6个行业体系课程让你从小白到大神</div>
+
+                            </div>
+
+                            <div style="width: 60px; height: 60px; background: #eee; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+
+                                <img src="https://via.placeholder.com/40x40?text=PS" alt="PS" style="width: 40px;">
+
+                            </div>
+
+                        </div>
+
+                        <div style="color: #666; font-size: 0.9rem; margin: 10px 0;">
+
+                            PS精通 | 淘宝美工 | 网页设计 | Ai精通 | 平面设计 | 审美提升 | 高级案例 | 摄影后期 | UI设计
+
+                        </div>
+
+                        <div style="color: #ff6b6b; font-weight: bold;">
+
+                            <span style="font-size: 0.9rem;">¥</span>
+
+                            <span style="font-size: 1.5rem;">1900</span>
+
+                            <span style="font-size: 0.9rem;">起</span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- 设计行业实战班 -->
+
+                    <div style="background: #fff; padding: 20px; margin-bottom: 20px; border-radius: 5px; border: 1px solid #eee; position: relative;">
+
+                        <div style="position: absolute; top: 10px; right: -10px; background: #ff6b6b; color: white; padding: 5px 15px; font-size: 0.8rem; transform: rotate(45deg); text-align: center;">
+
+                            火热报名中
+
+                        </div>
+
+                        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+
+                            <div style="flex: 1;">
+
+                                <div style="font-weight: bold; font-size: 1.1rem;">设计行业实战班</div>
+
+                                <div style="color: #666; font-size: 0.9rem;">中商·平面·摄影·网页·UI·审美 6个行业任你选</div>
+
+                            </div>
+
+                            <div style="width: 60px; height: 60px; background: #eee; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+
+                                <img src="https://via.placeholder.com/40x40?text=Ind" alt="Industry" style="width: 40px;">
+
+                            </div>
+
+                        </div>
+
+                        <div style="color: #ff6b6b; font-weight: bold;">
+
+                            <span style="font-size: 0.9rem;">¥</span>
+
+                            <span style="font-size: 1.5rem;">2900</span>
+
+                            <span style="font-size: 0.9rem;">起</span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- 平面设计全科班 -->
+
+                    <div style="background: #fff; padding: 20px; margin-bottom: 20px; border-radius: 5px; border: 1px solid #eee; position: relative;">
+
+                        <div style="position: absolute; top: 10px; right: -10px; background: #ff6b6b; color: white; padding: 5px 15px; font-size: 0.8rem; transform: rotate(45deg); text-align: center;">
+
+                            火热报名中
+
+                        </div>
+
+                        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+
+                            <div style="flex: 1;">
+
+                                <div style="font-weight: bold; font-size: 1.1rem;">平面设计全科班</div>
+
+                            </div>
+
+                            <div style="width: 60px; height: 60px; background: #eee; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+
+                                <img src="https://via.placeholder.com/40x40?text=2D" alt="2D" style="width: 40px;">
+
+                            </div>
+
+                        </div>
+
+                        <div style="color: #ff6b6b; font-weight: bold;">
+
+                            <span style="font-size: 0.9rem;">¥</span>
+
+                            <span style="font-size: 1.5rem;">2900</span>
+
+                            <span style="font-size: 0.9rem;">起</span>
+
+                        </div>
+
+                    </div>
+
+
 
                 </div>
 
@@ -548,17 +338,19 @@
 
         </div>
 
-    </section>
+    </main>
 
 
 
-    <!-- 页脚 -->
+    <!-- 底部 -->
 
-    <footer id="contact">
+    <footer style="background: #333; color: #fff; text-align: center; padding: 20px 0; font-size: 0.9rem;">
 
-        <p>&copy; 2026 视界工坊. 版权所有. 专注于 Adobe 软件教育。</p>
+        <div class="container">
 
-        <p>联系我们：contact@shijie.com</p>
+            <p>© 2026 闪逸在线教育. 保留所有权利.</p>
+
+        </div>
 
     </footer>
 
@@ -566,4 +358,4 @@
 
 </body>
 
-  </html>
+</html>
